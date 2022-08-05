@@ -1,13 +1,13 @@
 class Solution(object):
     # Sort both strings and check if equal.
-    # O(nlogn) time.
+    # O(nlogn) time and faster than 54% of solutions.
     def isAnagramUsingSorting(self, s, t):
         s = ''.join(sorted(s))
         t = ''.join(sorted(t))
         return s == t
 
     # Count occurences of characters and store in dictionaries with char as key and occurences as value. Check if equal.
-    # O(n) time.
+    # O(n) time and faster than 66% of solutions.
     def isAnagramUsingHashing(self, s, t):
         sHashtable = self.createHashmap(s)
         tHashtable = self.createHashmap(t)
