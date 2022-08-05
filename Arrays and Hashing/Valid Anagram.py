@@ -1,5 +1,5 @@
 class Solution(object):
-    # Sort both strings and check if equal.
+    # Sort both strings and check if they are equal.
     # O(nlogn) time and faster than 54% of solutions.
     def isAnagramUsingSorting(self, s, t):
         s = ''.join(sorted(s))
