@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = next
 
 # Iterative solution. Loop through and link to previous node.
-# O(n) time, faster than 72.1 of solutions.
+# O(n) time, faster than 72.1% of solutions.
 class Solution(object):
     def reverseList(self, head):
 
