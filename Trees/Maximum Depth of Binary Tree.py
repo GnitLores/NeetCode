@@ -2,6 +2,7 @@ class Solution(object):
     # Recursive solution.
     # Search each subtree for max depth and return max.
     # If bottom node, return node depth.
+    # Could also have been solved iteratively with a queue or stack.
     # O(n) speed and faster than 81.6% of solutions.
     def maxDepth(self, root):
         if not root:
