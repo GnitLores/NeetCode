@@ -32,11 +32,9 @@ def createNodes(values):
 def testSolution(*args):
     sol = Solution
     result = sol.reverseList(sol, *args)
-    while True:
+    while result is not None:
         val = result.val
         print("val: " + str(val))
         result = result.next
-        if result is None:
-            break
 
 testSolution(createNodes([1,2,3,4,5]))
