@@ -39,6 +39,7 @@ def createNodes(values):
     node = ListNode(values[0], nextNode)
     return node
 
+# create a cycle by setting the next pointer of the tail node to point at a node at some other position:
 def createCycle(list, cyclePos):
     node = list
     while node:
