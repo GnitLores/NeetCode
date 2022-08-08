@@ -1,8 +1,6 @@
 import heapq
 
 # Solution using minimum heap.
-# Smaller values are stored first in array.
-# If we constantly pop elements to keep the array at k size, the first element in the list must be the kth largest value.
 # Building the heap is O(n) time.
 # Adding elements is O(log n) time.
 # Reading the kth largest element is O(1) time.
