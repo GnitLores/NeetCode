@@ -1,9 +1,7 @@
 class Solution(object):
-    # Use a hashset as a sliding window.
-    # Add characters to the hashset.
+    # Use a hashset as a sliding window, and add characters to the hashset.
     # If a character already exist, remove character up to and including the previous occurrence  that character.
-    # Add new character.
-    # Record maximum set size.
+    # Add new character, and record maximum set size.   
     # O(n) time.
     def lengthOfLongestSubstring(self, s):
         
