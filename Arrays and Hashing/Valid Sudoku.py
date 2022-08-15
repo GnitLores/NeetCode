@@ -1,6 +1,10 @@
 import collections
 
-
+# Solution using dictionaries of sets.
+# For each value, check it against the set for that row, column, and box.
+# If the value is already present, return false, else add the value to those sets.
+# If no duplicate values are found, return true.
+# O(m*n) time.
 class Solution(object):
     def isValidSudoku(self, board):
         
