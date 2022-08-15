@@ -5,8 +5,8 @@ from typing import List
 # Merge them and pop the following interval.
 # O(n) and works in place.
 class Solution(object):
-    def merge(self, intervals: List):
-        intervals.sort(key = lambda x: x[0])
+    def merge(self, intervals):
+        intervals.sort()
 
         i = 0
         while i <= len(intervals)-2:
