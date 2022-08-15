@@ -3,7 +3,7 @@ from typing import List
 # Sort intervals by the start of the interval.
 # Iterate through, if an interval overlaps with the following interval:
 # Merge them and pop the following interval.
-# O(n) and works in place.
+# O(nlogn) because of sort and works in place.
 class Solution(object):
     def merge(self, intervals):
         intervals.sort()
