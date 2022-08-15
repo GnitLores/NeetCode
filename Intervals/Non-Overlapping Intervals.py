@@ -1,7 +1,7 @@
 from typing import List
 
 # If we have overlapping intervals:
-# Optimal choice is to remove interval that ends latest.
+# When iterating from beginning, the optimal choice is to remove interval that ends latest.
 # It has greatest potential to overlap with other intervals.
 # Sort intervals by start.
 # Iterate through adding intervals to a list.
