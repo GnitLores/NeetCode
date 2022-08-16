@@ -6,6 +6,7 @@ class Solution:
     # If midpoint is left of wrapping point, everything to the left is sorted - and conversely.
     # The minimum value is the first element after the wrapping point,
     # so keep looking for the wrapping point.
+    # O(logn) time.
     def findMin(self, nums: List[int]) -> int:
         l = 0
         r = len(nums) - 1
