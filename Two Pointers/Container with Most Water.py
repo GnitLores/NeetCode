@@ -1,4 +1,11 @@
 class Solution(object):
+    # Linear time double pointer solution.
+    # The key thing to realizes is that if one line is taller than the other, then there is no point in moving it.
+    # Moving it closer can only make the area smaller.
+    # So taking advantage of that fact, we can always move the shorter line closer looking for a greater area.
+    # Both lines being equally tall is a special case.
+    # There could still be a more optimal solution with the lines closer, and it doesn't matter which we move first.
+    # O(n) time.
     def maxArea(self, height):
         
         def calcWater(l, r):
@@ -6,9 +13,6 @@ class Solution(object):
 
         l = 0
         r = len(height) - 1
-
-        # if len(height) == 2:
-        #     return(calcWater(l, r))
 
         res = calcWater(l, r)
         while l < r:
