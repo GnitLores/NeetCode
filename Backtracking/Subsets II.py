@@ -7,7 +7,7 @@ class Solution:
     # This means that we can add them to a set to get unique combinations.
     # This does not work with unordered input because identical combinations with different order hash differently.
     # Sorting is O(n) which is faster than the overall complexity.
-    # O(2^n * n) time, since there are two choices for each element.
+    # O(n * 2^n) time, since there are two choices for each element.
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
 
@@ -49,7 +49,8 @@ class Solution:
             findcombinations(i + 1)
             subset.pop()
 
-            # For the "no" decision: iterate i to exclude duplicates. Works because input is sorted.
+            # For the "no" decision: iterate i to exclude duplicates.
+            # Works because input is sorted.
             while (i + 1) < len(nums) and nums[i] == nums[i + 1]:
                 i += 1
             findcombinations(i + 1)
