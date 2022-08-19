@@ -7,7 +7,7 @@ class Solution:
     # The tricky part is avoiding duplicate sets.
     # To avoid duplicates, we make the decision between including the current leftmost value
     # and not allowing the current leftmost value to be included.
-    # O(2^n * n) time.
+    # O(n * 2^n) time.
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
