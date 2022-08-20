@@ -1,6 +1,6 @@
 class Solution(object):
     # If finding the sum of squares results in a state that happened previously, an infinite cycle will occur.
-    # Save each state in a hastable, and check if there is a repetition.
+    # Save each state in a hashtable, and check if there is a repetition.
     # As long as it does not repeat, continue until 1 is reached.
     def isHappy(self, n):
         def decompose(n):
