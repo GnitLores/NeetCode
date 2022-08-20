@@ -8,7 +8,7 @@ class Solution:
     # but the multiplication itself is normal.
     def multiply(self, num1: str, num2: str) -> str:
         if num1 == "0" or num2 == "0":
-            return 0
+            return "0"
 
         def strToNum(s):
             # Iterate through the string backwards starting with ones.
@@ -40,7 +40,7 @@ class Solution:
     # Should definitely follow the rules of the problem.
     def multiplyCombination(self, num1: str, num2: str) -> str:
         if num1 == "0" or num2 == "0":
-            return 0
+            return "0"
 
         def strToDigits(s):
             num = [(ord(c) - ord("0")) * (10 ** i) for i, c in enumerate(s[::-1])]
