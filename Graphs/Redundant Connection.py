@@ -69,8 +69,10 @@ class Solution:
     # If we try to add an edge but the two nodes already have the same parent,
     # this is a redundant connection. It is creating a cycle.
     # We also use path compression to compress the chain of parents.
-    # Path compression makes the find operation O(logn) instead of O(n).
-    # This makes the total complexity O(nlogn) instead of O(n^2).
+    # Path compression makes the find operation O(logn) converging
+    # to O(1) with repeated callse instead of O(n).
+    # Union by rank is O(1).
+    # This makes the total complexity O(nlogn) converging to O(n) instead of O(n^2).
     def findRedundantConnectionUnionFind(self, edges: List[List[int]]) -> List[int]:
         par = [i for i in range(len(edges) + 1)] # all nodes are their own parent
         rank = [1] * (len(edges) + 1) # All subsets have rank 1
