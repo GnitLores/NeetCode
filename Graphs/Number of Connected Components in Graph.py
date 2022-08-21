@@ -38,7 +38,7 @@ class Solution:
         def find(node):
             p = par[node]
 
-            while p != par[node]:
+            while p != par[p]:
                 par[p] = par[par[p]] # path compression
                 p = par[p]
             return p
