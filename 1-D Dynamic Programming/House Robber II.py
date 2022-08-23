@@ -3,8 +3,8 @@ from typing import List
 
 class Solution:
     # Reusing the solution from House Robber.
-    # Since we know that the first and last houses cannot both
-    # be chosen, we can carry out two attemps - one with each omitted.
+    # Since we know that the first and last houses cannot both be chosen,
+    # we can carry out two attemps - one with each of those houses omitted.
     # The best choice is the one that gives the max value.
     # O(n) time.
     def rob(self, nums: List[int]) -> int:
@@ -22,8 +22,8 @@ class Solution:
 
             return nums[i]
 
-        ignoreLast = robSection(nums[:-1])
-        ignoreFIrst = robSection(nums[1:])
+        ignoreLast = robSection(nums[:-1]) # Omit last house
+        ignoreFIrst = robSection(nums[1:]) # Omit first house
         return max(ignoreLast, ignoreFIrst)
 
 sol = Solution()
