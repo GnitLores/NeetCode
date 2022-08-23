@@ -5,17 +5,17 @@ class Solution:
     # If a zero occurs, only two outcomes are possible.
     # If there is no number before it, or the number before is not 1 or 2, it violates the encoding and we can return 0.
     # If 1 or 2 comes before, this MUST be a two digit number 10 or 20.
-    # Consequently, we can split the problem into two simpler problems:
-    # the number of possible configurations to the left and right of this fixed number.
+    # Consequently, we can split the problem into two simpler subproblems:
+    # that is the number of possible configurations to the left and right of this fixed number.
     # If we do this for all zeros, we end up with smaller strings that cannot contain zero.
-    #
     # This simplifies the dynamic programming problem.
+    #
     # Obervation:
     # If we add a number, there are two cases:
-    # A - it is a valid second digit (two digits <= 26).
+    # A - it is a valid second digit (two digits together <= 26).
     # B - it is not a valid second digit.
     # If we treat it as the second digit of a number, the combinations possible are the same as ways_n-2.
-    # If not, the combinations possible are the same as ways_n-1.
+    # If we treat is a single digit, the combinations possible are the same as ways_n-1.
     # Thus, if it is a valid second digit, the combinations are (ways_n-1 + ways_n-2).
     # If not the combinations are just ways_n-1.
     #
