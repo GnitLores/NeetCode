@@ -11,7 +11,7 @@ class Solution:
 
         def checkPalindromeCenter(i, isOdd):
             l = i # Left side of palindrome
-            r = i if isOdd else i + 1 # Right, for odd point to same char as l, for even point to next char.
+            r = i if isOdd else i + 1 # Right, for odd point same char as l, for even point next char.
             longerFound = False
             while l >= 0 and r < len(s) and s[l] == s[r]: # If pointers are within limits and this is still a palindrome
                 if (r - l + 1) > length[0]: # And it is the longest palindrome so far
