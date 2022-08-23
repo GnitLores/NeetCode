@@ -21,6 +21,6 @@ class Solution:
         return res[0]
 
 sol = Solution()
-print(sol.countSubstrings("abc")) # uu uhamahu dood
-print(sol.countSubstrings("aaa")) # uu uhamahu dood
+print(sol.countSubstrings("abc"))
+print(sol.countSubstrings("aaa"))
 print(sol.countSubstrings("meuuopoinrgeuhamahubywdvaidoodpbfe")) # uu uhamahu dood
