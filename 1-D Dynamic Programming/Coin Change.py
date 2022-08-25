@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     # Dynamic programming solution.
     # For each possible value up the final value, memoize what the minimum number of coins to reach it is.
-    # For each coin, read that number was for the value that adding the coin to would give the current value.
+    # For each coin, read that number for the value which would add up to the current value.
     # Then find the minimum of those and add 1 coin.
     # O(coins * amount)
     def coinChange(self, coins: List[int], amount: int) -> int:
