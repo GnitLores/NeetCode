@@ -1,4 +1,8 @@
 # Reuse the solution from the Implement Trie problem.
+# To deal with the wildcard characters, when encountering a wildcard
+# execute a dfs for every every child at the trienode instead of just
+# searching the child for the specific character.
+#
 class TrieNode:
     def __init__(self):
         self.children = {}
