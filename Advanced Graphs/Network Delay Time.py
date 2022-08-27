@@ -5,11 +5,11 @@ import heapq
 class Solution:
     # Solution using Dijkstra's shortest bath algorithm.
     # BFS with min-heap.
-    # From the starting node, add all adjacent nodes to a minheap ordered by the path length.
-    # The pathlength to add is the path to the current node, plus the path to the added node.
-    # Once a node is visited, pop from the heap until we find an unvisited node.
-    # This way we only ever visit each node from the shortest path.
-    # O((E+V) * log V^2) = O((E+V) * logV)
+    # From the starting vertex, add all adjacent vertices to a minheap ordered by the path length.
+    # The pathlength to add is the path to the current vertex, plus the path to the added vertex.
+    # Once a vertex is visited, pop from the heap until we find an unvisited vertex.
+    # This way we only ever visit each vertex from the shortest path.
+    # O((E+V) * logV^2) = O((E+V) * logV)
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         adjacency = collections.defaultdict(set)
         for t in times:
@@ -18,22 +18,22 @@ class Solution:
         heap = []
         visited = set()
         maxTime = 0
-        node = k
+        vertex = k
         path = 0
         while len(visited) < n:
-            while node in visited:
+            while vertex in visited:
                 if len(heap) == 0:
                     return -1
-                path, node = heapq.heappop(heap)
+                path, vertex = heapq.heappop(heap)
             
 
-            for a, t in adjacency[node]:
+            for a, t in adjacency[vertex]:
                 if a not in visited:
                     newPath = path + t
                     heapq.heappush(heap, (newPath, a))
 
-            maxTime = max(maxTime, path) # We only visit nodes from the shortest path to it, so the max of those is the total time.
-            visited.add(node)
+            maxTime = max(maxTime, path) # We only visit vertices from the shortest path to each, so the max of those paths is the total time.
+            visited.add(vertex)
         return maxTime
 
 sol = Solution()
