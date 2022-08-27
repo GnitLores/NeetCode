@@ -3,7 +3,9 @@ import collections
 class Solution:
     # Sliding window solution.
     # First:
-    # - Grow window to the right until we find a matching substring. This is the initial window.
+    # - Grow window to the right until we find a matching substring.
+    # - Shrink that window from the left so long as it matches.
+    # - This is the initial window.
     # Repeatedly:
     # - Slide window to the right until we find a matching substring again.
     # - Try to shrink window from the left while maintaining match.
