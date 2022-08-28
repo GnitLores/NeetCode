@@ -6,21 +6,21 @@ class Solution:
     # Solution using binary search.
     # Observation: Since the median is the middle value, we know just from the total size
     # of the arrays how many elements will be to the left and right of it in total.
-    # That means, that if we choose to partition one of the arrays at a certain place,
+    # That means that if we choose to partition one of the arrays at a certain place,
     # then we already know where to partition the other array to get the correct total partition size.
     # This means that we can just do a binary search for the correct partition point in one array,
     # calculating the corresponding partition point in the other array, and checking if we have found
-    # the correct partition.
-    # Since both arrays are ordered, at the correct partition point, the rightmost element of the left
-    # partition of one array must be <= the leftmost element of the right partition of the other array.
-    # This is true for both arrays.
+    # a valid median.
+    # Since both arrays are ordered, at the correct partition point at the median value, the rightmost
+    # element of the left partition of one array must be <= the leftmost element of the right partition
+    # of the other array. This must be true for both arrays.
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         A, B = nums1, nums2
         total = len(nums1) + len(nums2)
         half = total // 2
         
          # Always start with midpoint of smaller array
-         # This prevents several complications, for example one array being empty
+         # This prevents several complications, for example when one array is empty
         if len(B) < len(A):
             A, B = B, A
         
