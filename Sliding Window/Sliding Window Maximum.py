@@ -12,6 +12,7 @@ class Solution:
     # We have to do fewer operations this way.
     # The number pointed to by the leftmost index in the queue is the current maximum.
     # Since we remove indices pointing to smaller numbers than those added later, this will always be true.
+    # O(n) time. If we had just found the max of the window it would have been O((n-w) * w).
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         output = []
         queue = collections.deque() # queue of indices
