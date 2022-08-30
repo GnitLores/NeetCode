@@ -63,13 +63,13 @@ class Solution:
 
     # Neetcode solution.
     # Create a dictionary and for each word, map patterns with a letter blanked out to the word itself.
-    # This blanked out patterns that can result from multiple words are mapped to all those words.
+    # The results in blanked out patterns resulting from multiple words being mapped to all those words.
     # For example:
     # "*og" : "dog", "log", "cog"
     # "d*g" : "dog"
     # "do*" : "dog", "dot"
     # In the BFS, for each word we can then just recreate these patterns from the word and find the
-    # adjacent words in this dictionary.
+    # adjacent words in the dictionary.
     # 
     # Both solutions pass on leetcode, but this is simpler and more efficient.
     def ladderLengthPattern(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
