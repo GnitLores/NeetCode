@@ -19,7 +19,6 @@ class Solution:
         for i in range(len(text1) + 1):
             dp.append([0]*(len(text2) + 1))
 
-        cnt = 0
         for i in range(len(text1) - 1, -1, -1):
             for j in range(len(text2) - 1, -1, -1):
                 if text1[i] == text2[j]:
