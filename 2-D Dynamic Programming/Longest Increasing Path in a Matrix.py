@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     # Solution using recursion and memoization.
     # For each tile, use dfs to find the longest path that ends there.
-    # The longest path must be the longest path of the four adjacent
+    # The longest path must be the longest path ending at each of the four adjacent
     # tiles + 1, so run dfs recursively on those tiles.
     # Memoize the results for each tile so we never calculate each tile
     # more than once.
