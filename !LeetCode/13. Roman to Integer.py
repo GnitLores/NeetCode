@@ -1,4 +1,9 @@
 class Solution:
+    # Simply iterate through.
+    # If the char is subtractable, check if it appears before a char
+    # that it can subtract from (e.g. if I check for IV and IX).
+    # If it does, subtract the char instead of adding it.
+    # Otherwise, just add the values of all chars.
     def romanToInt(self, s: str) -> int:
         hm = {
             "I": 1,
