@@ -5,6 +5,10 @@ class ListNode:
         self.next = next
 
 class Solution:
+    # Solution using hashset.
+    # Vist one node from each list in each iteration.
+    # Return the first node that gets visited twice.
+    # Return null if both lists reach the end without repetition.
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         visited = set()
 
