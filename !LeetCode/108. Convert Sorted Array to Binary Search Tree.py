@@ -9,6 +9,12 @@ class TreeNode:
 
 
 class Solution:
+    # Recursive solution.
+    # Since the array is sorted, the middle value must be the root,
+    # the left part must be the left subtree and the right part must
+    # be the right subtree.
+    # This property holds all the way down, so recursively divide the array
+    # with left and right pointers and make a node out of the middle element.
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
 
         def createTree(l, r):
