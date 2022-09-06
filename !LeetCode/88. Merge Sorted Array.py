@@ -2,6 +2,15 @@ from typing import List
 
 
 class Solution:
+    # Iterate backwards through arrays to avoid changing order.
+    # Keep indices:
+    # - Place insert at back of array 1
+    # - Greatest uninserted value in array 1
+    # - Greatest uninserted value in array 2
+    # If both arrays have more values, insert greatest value first.
+    # Otherwise insert from the one that does have more values.
+    # Decrement indices while iterating backwards.
+    # O(m + n)
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
