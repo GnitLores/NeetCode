@@ -2,6 +2,14 @@ from typing import List
 
 
 class Solution:
+    # Two pointer solution.
+    # Maintain pointer to left and right side.
+    # If left is the target value, swap it for the right pointer value
+    # and move the right pointer left.
+    # If the right value was also the target value, sweap again, otherwise
+    # move the left pointer right.
+    # Count the elements not equal to val.
+    # O(n) time and O(1) space.
     def removeElement(self, nums: List[int], val: int) -> int:
         """ Modify array in place with O(1) memory """
 
