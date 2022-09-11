@@ -1,5 +1,5 @@
 class Solution(object):
-    # Adding to numbers is equivalent XORing them and then adding the carries.
+    # Adding two numbers is equivalent XORing them and then adding the carries.
     # Carries can be found by ANDing the numbers together.
     # To move the carries to the bit they carry to, bitshift left by 1.
     # Adding the carries is also itself an addition.
