@@ -2,6 +2,13 @@ from tkinter import Y
 
 
 class Solution:
+    # Solution making use of python's conversion functions.
+    # int(x, 2) converts binary string to int, and 
+    # bin(x) can convert an int to binary representation.
+    # We need to strip the two characters long prefix of the output string (0b101 -> 101).
+    def addBinaryConversion(self, a: str, b: str) -> str:
+        return bin(int(a, 2) + int(b, 2))[2:]
+
     # Solution using output list.
     # Make list long enough to handle carry.
     # Go through bits from least significant to most.
@@ -29,5 +36,8 @@ class Solution:
 
 
 sol = Solution()
+print(sol.addBinaryConversion(a = "11", b = "1"))
+print(sol.addBinaryConversion(a = "1010", b = "1011"))
+print("")
 print(sol.addBinary(a = "11", b = "1"))
 print(sol.addBinary(a = "1010", b = "1011"))
