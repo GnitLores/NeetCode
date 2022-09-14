@@ -8,6 +8,10 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    # Since we're looking for the minimum height, it seems more efficient and simple to do a
+    # BFS than a DFS. With a BFS we will always arrive at the min depth node before going to
+    # a depper level.
+    # The BFS is done in rounds, incrementing the depth for each round.
     def minDepth(self, root: TreeNode) -> int:
         if not root: return 0
         queue = collections.deque()
