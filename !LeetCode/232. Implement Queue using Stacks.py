@@ -1,4 +1,18 @@
 class MyQueue:
+    # We can pop all elements from one stack and append to the other
+    # which reverses the order and turns a FILO structure into a FIFO structure.
+    # This means that it is easy to turn a stack into a queue.
+    # The problem is that pushing is slow,since we need to queify the entire
+    # structure every time we push a value.
+    # 
+    # A solution is to keep one stack queified and push new values to the other stack.
+    # Only once the queuified stack is empty do we add whatever is in the other stack to it.
+    # This works since the oldest values always leave first in a FIFO structure.
+    # This makes pushing O(1) since we just append to the secondary stack.
+    # Since we need to queuify the entire secondary stack whenever the primary stack becomes empty,
+    # popping and peeping beomce worst case O(n) operations.
+    # However, this only has to happen once for each value, once it is done it is never repeated.
+    # So overall the run time of pop and peep are amortized O(1).
     def __init__(self):
         self.stack1 = []
         self.stack2 = []
@@ -14,6 +28,8 @@ class MyQueue:
         self.queuify()
         return self.stack1[-1]
     
+    # WHen the primary stack is empty, reverse the order of everything
+    # stored up in the secondary stack and move it to the primary.
     def queuify(self) -> None: 
         if not self.stack1:
             while self.stack2:
@@ -22,6 +38,15 @@ class MyQueue:
     def empty(self) -> bool:
         return (len(self.stack1) + len(self.stack2)) == 0
 
+# Simple solution.
+# Stack1 acts as the queue.
+# Every time we push a new value, pop everuthing in stack1 and append to stack 2.
+# This reverses the order.
+# Append the new value to stack2.
+# Pop everything from stack2 to stack1, reversing the order again.
+# This results in stack1 being first in first out.
+# However, pushing is a O(n) operation.
+# All other operations are O(1).
 class MyQueueSimple:
 
     def __init__(self):
