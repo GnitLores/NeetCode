@@ -6,6 +6,7 @@
 # def guess(num: int) -> int:
 
 class Solution:
+    # Binary search solution.
     def guessNumber(self, n: int, pick: int) -> int:
         def guess(g):
             if g == pick: return 0
