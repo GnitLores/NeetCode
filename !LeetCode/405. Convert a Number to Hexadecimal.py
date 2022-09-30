@@ -6,7 +6,7 @@ class Solution:
     # That means that we can just add the negative number to 4294967294
     # (amd add 1 since negative numbers start at -1) and then convert that
     # number to hex instead.
-    # The hex conversion is the usual modulo and binary division method with
+    # The hex conversion is the usual modulo and integer division method with
     # the added necessity of mapping numbers greater than 9 to letters.
     def toHex(self, num: int) -> str:
         if num == 0: return "0"
