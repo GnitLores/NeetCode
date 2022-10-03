@@ -15,10 +15,10 @@ class Solution:
         maxLen = w // 2 if w % 2 == 0 else w // 3
 
         for sw in range(1, maxLen + 1):
-            if w % sw == 0:
-                substr = s[0:sw]
-                if s == substr * (w // sw):
-                    return True
+            # If string width is divisible by substring width
+            # and if duplicated substring is equal to string, it is a match.
+            if w % sw == 0 and s == s[0:sw] * (w // sw):
+                return True
                 
         return False
 
