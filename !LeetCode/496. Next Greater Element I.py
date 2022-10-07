@@ -2,6 +2,25 @@ from typing import List
 
 
 class Solution:
+    # Linear time solution using stack.
+    # It would be easy to solve this in O(n1 * n2) time by just searching through
+    # n2 for each element in n1.
+    # If we can find the mext greater element in n2 for every element in n2 in linear time,
+    # then it can be easily solved in multiple different ways. Here I mapped each number to
+    # the greater element with a dictionary (numbers are unique in this problem).
+    #
+    # The main problem when finding the greater elements is that we can get a sequence of
+    # decreasing numbers, and the next time we find a greater element it might be bigger than some of them
+    # but not all.
+    # This problem can be naturally solved with a stack.
+    # As long as numbers are decreasing, we add them to the stack, and when we find a greater number we
+    # pop from the stack until that number is not greater than the top element (or the stack is empty)
+    # and map the numbers to the greater element. The elements in the stack are always ordered, and
+    # it is not possible to miss any numbers.
+    #
+    # Finally we can just go through n1 and construct the output using the hashmap.
+    #
+    # Linear O(n1 + n2) time.
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         stack = []
         greater = dict()
