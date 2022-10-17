@@ -12,6 +12,8 @@ class Solution:
     # and check for groups of three consecutive zeros.
     # If the flowerbed is two elements long, there are no elements to
     # iterate through as they are both edge elements.
+    # Consequently, the boundary condition checks deal with the two element
+    # case without any need to enter the loop.
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         if n == 0: return True
         if len(flowerbed) == 1: return flowerbed[0] == 0 and n <= 1
