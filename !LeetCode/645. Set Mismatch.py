@@ -28,6 +28,20 @@ class Solution:
         duplicated = missing - (expectedSum - sum(nums))
         return [duplicated, missing]
 
+    # Simpler solution for finding the duplicated number based
+    # on removing the input numbers from the set until a number not in the set is found.
+    # This is the duplicated number, which cannot be removed twice.
+    # Still O(n) but not as efficient.
+    def findErrorNumsNoMath(self, nums: List[int]) -> List[int]:
+        hashset = set(range(1, len(nums) + 1))
+        missing = hashset.difference(set(nums)).pop()
+        for n in nums:
+            if n not in hashset:
+                duplicated = n
+                break
+            hashset.remove(n)
+        return [duplicated, missing]
+
     
 
 sol = Solution()
@@ -35,3 +49,8 @@ print(sol.findErrorNums(nums = [1,2,2,4]))
 print(sol.findErrorNums(nums = [1,1]))
 print(sol.findErrorNums(nums = [1,3,3]))
 print(sol.findErrorNums(nums = [3,2,2]))
+print("")
+print(sol.findErrorNumsNoMath(nums = [1,2,2,4]))
+print(sol.findErrorNumsNoMath(nums = [1,1]))
+print(sol.findErrorNumsNoMath(nums = [1,3,3]))
+print(sol.findErrorNumsNoMath(nums = [3,2,2]))
