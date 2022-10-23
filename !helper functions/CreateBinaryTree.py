@@ -11,8 +11,9 @@ def buildTree(nums):
     numQ = deque(nums)
     root = TreeNode(numQ.popleft())
     nodeQ = deque([root])
-    node = nodeQ.popleft()
     while numQ:
+        node = nodeQ.popleft()
+
         node.left = TreeNode(numQ.popleft()) if numQ[0] else numQ.popleft()
         if node.left: nodeQ.append(node.left)
         if not numQ: break
@@ -20,5 +21,4 @@ def buildTree(nums):
         node.right = TreeNode(numQ.popleft()) if numQ[0] else numQ.popleft()
         if node.right: nodeQ.append(node.right)
 
-        node = nodeQ.popleft()
     return root
