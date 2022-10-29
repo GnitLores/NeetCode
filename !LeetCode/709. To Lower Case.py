@@ -8,7 +8,6 @@ class Solution:
             if 65 <= ascii <= 90:
                 c = chr(ascii + 32)
             return c
-
         return "".join([toLower(c) for c in s])
 
     def toLowerCaseCheating(self, s: str) -> str:
