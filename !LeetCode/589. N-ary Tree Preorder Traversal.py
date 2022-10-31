@@ -9,7 +9,7 @@ class Node:
 
 class Solution:
     # Depth first search.
-    # For each node, add the node value to the output first, and then continue.
+    # For each node, add the node value to the output first, and then explore subtrees.
     def preorder(self, root: 'Node') -> List[int]:
         if not root: return []
         res = []
