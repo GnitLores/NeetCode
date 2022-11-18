@@ -1,9 +1,8 @@
 from collections import deque
 
-# Keep hisotory of pings in queue and when pinging
-# pop all pings that have expired before returning count.
+# Keep history of pings in queue. When pinging, pop all ping records that
+# have expired before the given time limit before returning count.
 class RecentCounter:
-
     def __init__(self):
         self.q = deque()
         return
@@ -21,6 +20,3 @@ print(obj.ping(1))
 print(obj.ping(100))
 print(obj.ping(3001))
 print(obj.ping(3002))
-# Your RecentCounter object will be instantiated and called as such:
-# obj = RecentCounter()
-# param_1 = obj.ping(t)
