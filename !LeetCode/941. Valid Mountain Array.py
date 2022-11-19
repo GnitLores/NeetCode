@@ -2,11 +2,13 @@ from typing import List
 
 
 class Solution:
-    # The array is valid if:
+    # It can be slightly complicated to check for the rising part because
+    # any flat segment is always invalid, and a drop is valid if it is the peak.
+    # One way to deal with this is to check for the following conditions for the array:
     # - It is long enough.
-    # - It is never flat.
-    # - It starts out increasing.
-    # - There is a peak where it drops.
+    # - It is never flat (rejects array with any segments that are not strictly increasing or decreasing).
+    # - It starts out increasing (rejects strictly decreasing array).
+    # - There is a peak where it drops (rejects stricly increasing array).
     # - It is strictly decreasing after that peak.
     def validMountainArray(self, arr: List[int]) -> bool:
         if len(arr) < 3: return False
