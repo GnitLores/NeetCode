@@ -2,6 +2,15 @@ from typing import List
 
 
 class Solution:
+    # Solution making use of two helper functions.
+    # - A function that finds the coordinates of the rook.
+    # - A function that takes an array starting with a rook and
+    # returns 1 if the next piece is a pawn or 0 if the next piece
+    # is a bishop or there are no more pieces.
+    #
+    # Locate the rook and call the second function for the four lines
+    # extending up, down, left, and right from it.
+    # Count the number of possible captures.
     def numRookCaptures(self, board: List[List[str]]) -> int:
         def findRook():
             for r in range(8):
