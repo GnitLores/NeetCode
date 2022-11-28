@@ -1,10 +1,5 @@
 from typing import Optional
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from CreateBinaryTree import *
 
 class Solution:
     # Depth first search solution.
@@ -24,3 +19,6 @@ class Solution:
             if root.right: dfs(root.right, cur)
         dfs(root, 0)
         return sum(res)
+
+sol = Solution()
+print(sol.sumRootToLeaf(buildTree([1,0,1,0,1,0,1])))
