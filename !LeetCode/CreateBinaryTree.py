@@ -16,7 +16,7 @@ def buildTree(nums):
 
         node.left = TreeNode(numQ.popleft()) if numQ[0] != None else numQ.popleft()
         if node.left: nodeQ.append(node.left)
-        if numQ == None: break
+        if not numQ: break
 
         node.right = TreeNode(numQ.popleft()) if numQ[0] != None else numQ.popleft()
         if node.right: nodeQ.append(node.right)
