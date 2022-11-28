@@ -8,7 +8,7 @@ class TreeNode:
 
 class Solution:
     # Depth first search solution.
-    # Pass along current value and when finding a leaf, add crrent value to output.
+    # Pass along current value and when finding a leaf, add current value to output.
     # Since higher nodes are more significant, the deeper we go in the tree, the more significant
     # the higher nodes are.
     # Multiply the current value by 2 for every level we descend and add the next node.
