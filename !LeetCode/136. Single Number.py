@@ -29,19 +29,19 @@ class Solution:
         for n in nums:
             count[n] += 1
         for n in nums:
-            if count[n] == 1: return n
-                
-        
+            if count[n] == 1:
+                return n
+
 
 sol = Solution()
-print(sol.singleNumber([2,2,1]))
-print(sol.singleNumber([4,1,2,1,2]))
+print(sol.singleNumber([2, 2, 1]))
+print(sol.singleNumber([4, 1, 2, 1, 2]))
 print(sol.singleNumber([1]))
 print("")
-print(sol.singleNumberHashset([2,2,1]))
-print(sol.singleNumberHashset([4,1,2,1,2]))
+print(sol.singleNumberHashset([2, 2, 1]))
+print(sol.singleNumberHashset([4, 1, 2, 1, 2]))
 print(sol.singleNumberHashset([1]))
 print("")
-print(sol.singleNumberCount([2,2,1]))
-print(sol.singleNumberCount([4,1,2,1,2]))
+print(sol.singleNumberCount([2, 2, 1]))
+print(sol.singleNumberCount([4, 1, 2, 1, 2]))
 print(sol.singleNumberCount([1]))

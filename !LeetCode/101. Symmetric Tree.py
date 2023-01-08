@@ -5,12 +5,14 @@ class TreeNode:
         self.left = left
         self.right = right
 
+
 class Solution:
     # DFS solution.
     # Traverse tree recursively twice, once choosing left children first and once choosing right children first.
     # If tree is symmetric the outputs will be identical.
     def isSymmetric(self, root: TreeNode) -> bool:
-        if root == None: return True
+        if root is None:
+            return True
 
         def dfs(root: TreeNode, leftFirst: bool, res: list):
             res.append(root.val)
@@ -33,6 +35,19 @@ class Solution:
 
         return True
 
+
 sol = Solution()
-print(sol.isSymmetric(TreeNode(1, TreeNode(2, TreeNode(3), TreeNode(4)), TreeNode(2, TreeNode(4), TreeNode(3)))))
-print(sol.isSymmetric(TreeNode(1, TreeNode(2, None, TreeNode(3)), TreeNode(2, None, TreeNode(3)))))
+print(
+    sol.isSymmetric(
+        TreeNode(
+            1,
+            TreeNode(2, TreeNode(3), TreeNode(4)),
+            TreeNode(2, TreeNode(4), TreeNode(3)),
+        )
+    )
+)
+print(
+    sol.isSymmetric(
+        TreeNode(1, TreeNode(2, None, TreeNode(3)), TreeNode(2, None, TreeNode(3)))
+    )
+)

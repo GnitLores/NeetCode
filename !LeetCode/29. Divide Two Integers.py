@@ -15,15 +15,17 @@ class Solution:
         MIN = -2147483648
         dividendNegative = dividend < 0
         divisorNegative = divisor < 0
-        doNegate = True if dividendNegative != divisorNegative else False
+        doNegate = dividendNegative != divisorNegative
 
         cnt = 0
         dividend = abs(dividend)
         divisor = abs(divisor)
         while dividend >= divisor:
-            tmp = divisor # Temporary number to subtract instead of divisor. tmp = divisor * multiplier.
-            multiplier = 1 # Number of divisor subtractions done per iterations.
-            while dividend >= tmp: # Grow the tmp number until it is larger than the dividend and then reset tp multiplier of 1
+            tmp = divisor  # Temporary number to subtract instead of divisor. tmp = divisor * multiplier.
+            multiplier = 1  # Number of divisor subtractions done per iterations.
+            while (
+                dividend >= tmp
+            ):  # Grow the tmp number until it is larger than the dividend and then reset tp multiplier of 1
 
                 dividend -= tmp
                 cnt += multiplier
@@ -32,7 +34,8 @@ class Solution:
                 multiplier += multiplier
                 tmp += tmp
 
-        if doNegate: cnt = -cnt
+        if doNegate:
+            cnt = -cnt
         return max(MIN, min(MAX, cnt))
 
     # Naive solution.
@@ -46,7 +49,7 @@ class Solution:
         MIN = -2147483648
         dividendNegative = dividend < 0
         divisorNegative = divisor < 0
-        doNegate = True if dividendNegative != divisorNegative else False
+        doNegate = dividendNegative != divisorNegative
 
         cnt = 0
         dividend = abs(dividend)
@@ -55,14 +58,16 @@ class Solution:
             dividend -= divisor
             cnt += 1
 
-        if doNegate: cnt = -cnt
+        if doNegate:
+            cnt = -cnt
         return max(MIN, min(MAX, cnt))
 
+
 sol = Solution()
-print(sol.divide(dividend = 100, divisor = 3))
-print(sol.divide(dividend = 10, divisor = 3))
-print(sol.divide(dividend = 7, divisor = -3))
+print(sol.divide(dividend=100, divisor=3))
+print(sol.divide(dividend=10, divisor=3))
+print(sol.divide(dividend=7, divisor=-3))
 print("")
-print(sol.divideNaive(dividend = 100, divisor = 3))
-print(sol.divideNaive(dividend = 10, divisor = 3))
-print(sol.divideNaive(dividend = 7, divisor = -3))
+print(sol.divideNaive(dividend=100, divisor=3))
+print(sol.divideNaive(dividend=10, divisor=3))
+print(sol.divideNaive(dividend=7, divisor=-3))

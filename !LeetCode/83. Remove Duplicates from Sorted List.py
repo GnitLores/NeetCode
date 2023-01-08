@@ -3,6 +3,8 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+
 class Solution:
     # Slightly simpler and more efficient solution.
     # No need to keep track of previous node, just jump
@@ -29,16 +31,21 @@ class Solution:
 
         return head
 
+
 sol = Solution()
 res = sol.deleteDuplicatesDoubleLoop(ListNode(1, ListNode(1, ListNode(1))))
 print("")
 res = sol.deleteDuplicatesDoubleLoop(ListNode(1, ListNode(1, ListNode(2))))
 print("")
-res = sol.deleteDuplicatesDoubleLoop(ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3))))))
+res = sol.deleteDuplicatesDoubleLoop(
+    ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3)))))
+)
 print("")
 res = sol.deleteDuplicates(ListNode(1, ListNode(1, ListNode(1))))
 print("")
 res = sol.deleteDuplicates(ListNode(1, ListNode(1, ListNode(2))))
 print("")
-res = sol.deleteDuplicates(ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3))))))
+res = sol.deleteDuplicates(
+    ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3)))))
+)
 print("")

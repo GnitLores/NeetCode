@@ -6,8 +6,10 @@ class Solution:
     # digit to get the least significant digit at the most significant
     # place.
     def isPalindromeReverseDigits(self, x: int) -> bool:
-        if x < 0: return False
-        if x < 10: return True
+        if x < 0:
+            return False
+        if x < 10:
+            return True
 
         originalNum = x
         reverseNum = 0
@@ -16,39 +18,39 @@ class Solution:
             reverseNum += x % 10
             x //= 10
         return originalNum == reverseNum
-    
+
     # Just cast to string, reverse and check.
     def isPalindromeReverseString(self, x: int) -> bool:
-        if x < 0: return False
-        if x < 10: return True
-
-        return str(x) == str(x)[::-1]
+        if x < 0:
+            return False
+        return True if x < 10 else str(x) == str(x)[::-1]
 
     # Cast to string and check with two pointers.
     def isPalindromeString(self, x: int) -> bool:
-        if x < 0: return False
-        if x < 10: return True
+        if x < 0:
+            return False
+        if x < 10:
+            return True
 
         x = str(x)
-        l, r = 0, len(x) - 1
-        while l < r:
-            if x[l] != x[r]:
-                return False
-            l += 1
-            r -= 1
-        return True
+        return self.checkPalindrom(x)
 
     # Strip least significant digit and add to list.
     # Check list with two pointers.
     def isPalindromeDigits(self, x: int) -> bool:
-        if x < 0: return False
-        if x < 10: return True
+        if x < 0:
+            return False
+        if x < 10:
+            return True
 
         digits = []
         while x > 0:
             digits.append(x % 10)
             x //= 10
 
+        return self.checkPalindrom(digits)
+
+    def checkPalindrom(self, digits):
         l, r = 0, len(digits) - 1
         while l < r:
             if digits[l] != digits[r]:
@@ -56,6 +58,7 @@ class Solution:
             l += 1
             r -= 1
         return True
+
 
 sol = Solution()
 print(sol.isPalindromeReverseDigits(121))

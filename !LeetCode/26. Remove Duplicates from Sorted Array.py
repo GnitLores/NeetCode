@@ -18,7 +18,7 @@ class Solution:
                 uniqueNums += 1
         return uniqueNums
 
-        
+
 sol = Solution()
-print(sol.removeDuplicates([1,1,2]))
-print(sol.removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+print(sol.removeDuplicates([1, 1, 2]))
+print(sol.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))

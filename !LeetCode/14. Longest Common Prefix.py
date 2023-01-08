@@ -15,6 +15,7 @@ class Solution:
                 break
         return "".join(res)
 
+
 sol = Solution()
-print(sol.longestCommonPrefix(["flower","flow","flight"]))
-print(sol.longestCommonPrefix(["dog","racecar","car"]))
+print(sol.longestCommonPrefix(["flower", "flow", "flight"]))
+print(sol.longestCommonPrefix(["dog", "racecar", "car"]))
