@@ -12,7 +12,8 @@ class Solution:
     def canWinNim(self, n: int) -> bool:
         return n % 4 != 0
 
+
 sol = Solution()
-print(sol.canWinNim(n = 4))
-print(sol.canWinNim(n = 1))
-print(sol.canWinNim(n = 2))
+print(sol.canWinNim(n=4))
+print(sol.canWinNim(n=1))
+print(sol.canWinNim(n=2))

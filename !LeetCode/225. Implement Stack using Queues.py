@@ -65,7 +65,6 @@ obj.push(5)
 print(obj.pop())
 print(obj.pop())
 obj.push(6)
-pass
 
 obj = MyStackDoubleQueue()
 print(obj.empty())
@@ -77,4 +76,3 @@ obj.push(5)
 print(obj.pop())
 print(obj.pop())
 obj.push(6)
-pass
