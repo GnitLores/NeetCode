@@ -1,8 +1,9 @@
 # Definition for singly-linked list.
 class ListNode:
-    def __init__(self, x = 0, next = None):
+    def __init__(self, x=0, next=None):
         self.val = x
         self.next = next
+
 
 class Solution:
     # Solution using hashset.
@@ -16,21 +17,20 @@ class Solution:
             if headA:
                 if headA in visited:
                     return headA
-                else:
-                    visited.add(headA)
-                    headA = headA.next
-            
+                visited.add(headA)
+                headA = headA.next
+
             if headB:
                 if headB in visited:
                     return headB
-                else:
-                    visited.add(headB)
-                    headB = headB.next
-            
+                visited.add(headB)
+                headB = headB.next
+
             if not headA and not headB:
                 break
-            
+
         return None
+
 
 sol = Solution()
 

@@ -6,7 +6,7 @@ class Solution:
             res = 0
             while num > 0:
                 res += num % 10
-                num = num // 10
+                num //= 10
             return res
 
         while num >= 10:
@@ -17,14 +17,17 @@ class Solution:
     # If you write out the sum for increasing numbers, it becomes apparent that
     # the sum = (number % 9) unless the result is 0 in which case it becomes 9.
     def addDigits(self, num: int) -> int:
-        if num == 0: return 0
-        num = num % 9
-        if num == 0: num = 9 
+        if num == 0:
+            return 0
+        num %= 9
+        if num == 0:
+            num = 9
         return num
 
+
 sol = Solution()
-print(sol.addDigits(num = 38))
-print(sol.addDigits(num = 0))
+print(sol.addDigits(num=38))
+print(sol.addDigits(num=0))
 print("")
-print(sol.addDigits(num = 38))
-print(sol.addDigits(num = 0))
+print(sol.addDigits(num=38))
+print(sol.addDigits(num=0))

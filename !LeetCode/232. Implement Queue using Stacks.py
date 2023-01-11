@@ -4,7 +4,7 @@ class MyQueue:
     # This means that it is easy to turn a stack into a queue.
     # The problem is that pushing is slow,since we need to queify the entire
     # structure every time we push a value.
-    # 
+    #
     # A solution is to keep one stack queified and push new values to the other stack.
     # Only once the queuified stack is empty do we add whatever is in the other stack to it.
     # This works since the oldest values always leave first in a FIFO structure.
@@ -27,16 +27,17 @@ class MyQueue:
     def peek(self) -> int:
         self.queuify()
         return self.stack1[-1]
-    
+
     # WHen the primary stack is empty, reverse the order of everything
     # stored up in the secondary stack and move it to the primary.
-    def queuify(self) -> None: 
+    def queuify(self) -> None:
         if not self.stack1:
             while self.stack2:
                 self.stack1.append(self.stack2.pop())
 
     def empty(self) -> bool:
         return (len(self.stack1) + len(self.stack2)) == 0
+
 
 # Simple solution.
 # Stack1 acts as the queue.
@@ -48,7 +49,6 @@ class MyQueue:
 # However, pushing is a O(n) operation.
 # All other operations are O(1).
 class MyQueueSimple:
-
     def __init__(self):
         self.stack1 = []
         self.stack2 = []
@@ -68,6 +68,7 @@ class MyQueueSimple:
 
     def empty(self) -> bool:
         return len(self.stack1) == 0
+
 
 obj = MyQueue()
 print(obj.empty())

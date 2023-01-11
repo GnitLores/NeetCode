@@ -9,7 +9,7 @@ class Solution:
     # 6->0000 0110
     # 7->0000 0111
     # 8->0000 1000 <-
-    # 
+    #
     # Powers of two all have leading 1 bit followed by zeroes
     # Consequently, ANDing that number by the number -1 gives 0:
     # bit representation of 7  -> 0111
@@ -19,10 +19,9 @@ class Solution:
     # O(1) in principle but it actually seems to run slower than my own solution
     # for the leetcode test cases.
     def isPowerOfTwoBitwise(self, n: int) -> bool:
-        if n == 1: return True
-        if n < 2: return False
-
-        return n & (n - 1) == 0
+        if n == 1:
+            return True
+        return False if n < 2 else n & (n - 1) == 0
 
     # 2^0 is 1
     # 2^1 is 2
@@ -33,18 +32,20 @@ class Solution:
     # but that's not the same as the number being a power of two.
     # O(logn)
     def isPowerOfTwo(self, n: int) -> bool:
-        if n == 1: return True
-        if n < 2: return False
+        if n == 1:
+            return True
+        if n < 2:
+            return False
         while n >= 2:
             n /= 2
-        if n == 1: return True
-        return False
+        return n == 1
+
 
 sol = Solution()
-print(sol.isPowerOfTwoBitwise(n = 1))
-print(sol.isPowerOfTwoBitwise(n = 16))
-print(sol.isPowerOfTwoBitwise(n = 3))
+print(sol.isPowerOfTwoBitwise(n=1))
+print(sol.isPowerOfTwoBitwise(n=16))
+print(sol.isPowerOfTwoBitwise(n=3))
 print("")
-print(sol.isPowerOfTwo(n = 1))
-print(sol.isPowerOfTwo(n = 16))
-print(sol.isPowerOfTwo(n = 3))
+print(sol.isPowerOfTwo(n=1))
+print(sol.isPowerOfTwo(n=16))
+print(sol.isPowerOfTwo(n=3))

@@ -11,7 +11,8 @@ class Solution:
 
         return "".join(reversed(res))
 
+
 sol = Solution()
-print(sol.convertToTitle(columnNumber = 1))
-print(sol.convertToTitle(columnNumber = 28))
-print(sol.convertToTitle(columnNumber = 701))
+print(sol.convertToTitle(columnNumber=1))
+print(sol.convertToTitle(columnNumber=28))
+print(sol.convertToTitle(columnNumber=701))

@@ -1,6 +1,7 @@
 from typing import List
 import collections
 
+
 class Solution:
     # Second attempt:
     # We actually only need to know the last instance of each number because
@@ -36,11 +37,12 @@ class Solution:
             hashmap[n].add(i)
         return False
 
+
 sol = Solution()
-print(sol.containsNearbyDuplicate(nums = [1,2,3,1], k = 3))
-print(sol.containsNearbyDuplicate(nums = [1,0,1,1], k = 1))
-print(sol.containsNearbyDuplicate(nums = [1,2,3,1,2,3], k = 2))
+print(sol.containsNearbyDuplicate(nums=[1, 2, 3, 1], k=3))
+print(sol.containsNearbyDuplicate(nums=[1, 0, 1, 1], k=1))
+print(sol.containsNearbyDuplicate(nums=[1, 2, 3, 1, 2, 3], k=2))
 print("")
-print(sol.containsNearbyDuplicateSet(nums = [1,2,3,1], k = 3))
-print(sol.containsNearbyDuplicateSet(nums = [1,0,1,1], k = 1))
-print(sol.containsNearbyDuplicateSet(nums = [1,2,3,1,2,3], k = 2))
+print(sol.containsNearbyDuplicateSet(nums=[1, 2, 3, 1], k=3))
+print(sol.containsNearbyDuplicateSet(nums=[1, 0, 1, 1], k=1))
+print(sol.containsNearbyDuplicateSet(nums=[1, 2, 3, 1, 2, 3], k=2))

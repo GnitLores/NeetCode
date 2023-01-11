@@ -7,13 +7,14 @@ import collections
 class MyStack:
     def __init__(self):
         self.q = collections.deque()
-    
+
     def push(self, x: int) -> None:
-        if not x: return
+        if not x:
+            return
         self.q.append(x)
         for _ in range(len(self.q) - 1):
             self.q.append(self.q.popleft())
-            
+
     def pop(self) -> int:
         return self.q.popleft()
 
@@ -22,6 +23,7 @@ class MyStack:
 
     def empty(self) -> bool:
         return len(self.q) == 0
+
 
 # Solution using two queues.
 # Queue 1 acts as the stack, and queue 2 is used to push elements to it.
@@ -34,14 +36,15 @@ class MyStackDoubleQueue:
     def __init__(self):
         self.q1 = collections.deque()
         self.q2 = collections.deque()
-    
+
     def push(self, x: int) -> None:
-        if not x: return
+        if not x:
+            return
         self.q2.append(x)
         while self.q1:
             self.q2.append(self.q1.popleft())
         self.q1, self.q2 = self.q2, self.q1
-            
+
     def pop(self) -> int:
         return self.q1.popleft()
 

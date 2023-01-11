@@ -12,6 +12,7 @@ class Solution:
             if count[n] > half:
                 return n
 
+
 sol = Solution()
-print(sol.majorityElement([3,2,3]))
-print(sol.majorityElement([2,2,1,1,1,2,2]))
+print(sol.majorityElement([3, 2, 3]))
+print(sol.majorityElement([2, 2, 1, 1, 1, 2, 2]))

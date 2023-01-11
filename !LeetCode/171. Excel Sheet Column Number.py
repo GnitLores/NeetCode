@@ -4,10 +4,10 @@ class Solution:
     # by powers of 26 and calculating the sum.
     def titleToNumber(self, columnTitle: str) -> int:
         columnTitle = columnTitle[::-1]
-        res = 0
-        for i, c in enumerate(columnTitle):
-            res += (ord(c) - ord("A") + 1) * (26 ** i)
-        return res
+        return sum(
+            (ord(c) - ord("A") + 1) * (26**i) for i, c in enumerate(columnTitle)
+        )
+
 
 sol = Solution()
 print(sol.titleToNumber("A"))
